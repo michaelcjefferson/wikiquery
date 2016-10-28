@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Wikipedia Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://use.fontawesome.com/6b8dc52f97.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<div class="container">
+  <div class="background"></div>
+  <div class="search-box">
+    <input type="text" class="search-input" v-model="term"/>
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </div>
+  <div v-if="predictions" class="prediction-list">
+    <button v-for="prediction in predictions" class="prediction" v-on:click.prevent="openLink(prediction)">{{ prediction.title }}</button>
+  </div>
+  <div class="random-button">TAKE ME TO A RANDOM PAGE!</div>
+</div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
+
+      <script src="js/index.js"></script>
+
+</body>
+</html>
